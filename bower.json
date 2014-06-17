@@ -1,0 +1,23 @@
+{
+  "name": "angular-input-dice",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nerdfiles/angular-input-dice",
+  "authors": [
+    "nerdfiles <nerdfiles@gmail.com>"
+  ],
+  "description": "A directive for scanning Web documents and extrapolating organic UI components through text corpuses.",
+  "main": "input-dice.j",
+  "keywords": [
+    "input",
+    "angularjs",
+    "text-processing"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
