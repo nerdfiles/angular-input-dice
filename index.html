@@ -3,21 +3,30 @@
 <head>
   <meta charset='UTF-8'>
   <title></title>
-  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js'></script>
+  <script src='./vendor/angular/angular.min'></script>
   <script src='./input-dice.js'></script>
   <script>
     var appTest = angular.module('appTest', ['ngInputDice']);
     appTest.controller('testController', [
         '$scope',
-        function ($scope) {
+        'diceService',
+        function ($scope, diceService) {
           console.log($scope);
+          console.log(diceService);
         }
     ]);
   </script>
 </head>
-<body data-ng-app='appTest'>
-  <data-ng-view>
-    <p>Tell</p>
-  </data-ng-view>
+<body ng-app='appTest'>
+  <ng-view ng-controller='testController'>
+    <input-dice
+      object-control="{
+        newControl: true
+      }"
+      admin-control="{
+        secondaryControl: false
+      }"
+    ></input-dice>
+  </ng-view>
 </body>
 </html>

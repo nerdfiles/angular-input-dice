@@ -4,15 +4,9 @@
     '$http'
     ($http) ->
       serviceInterface = @
-      console.log serviceInterface
+      serviceInterface.dice = () ->
+        console.log $http
       serviceInterface
-  ]
-  ctrl = ngInputDice.controller 'testController', [
-    '$scope'
-    'diceService'
-    ($scope, diceService) ->
-      console.log $scope
-      console.log diceService
   ]
   # @usage
   #     <input-dice></input-dice>
@@ -23,10 +17,13 @@
         console.log $element
         console.log $attrs
       directiveInterface =
-        controller: 'testController'
-        restrict: 'E'
-        scope: false
-        link: linker
+        controller  : 'testController'
+        restrict    : 'E'
+        scope       : {
+          'control' : '=objectControl'
+          'admin'   : '=adminControl'
+        }
+        link        : linker
   ]
   ngInputDice
 )()
