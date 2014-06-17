@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <title></title>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
-  <script src=""></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js'></script>
+  <script src='./input-dice.js'></script>
+  <script>
+    var appTest = angular.module('appTest', ['ngInputDice']);
+    appTest.controller('testController', [
+        '$scope',
+        function ($scope) {
+          console.log($scope);
+        }
+    ]);
+  </script>
 </head>
-<body>
-  
+<body data-ng-app='appTest'>
+  <data-ng-view>
+    <p>Tell</p>
+  </data-ng-view>
 </body>
 </html>
