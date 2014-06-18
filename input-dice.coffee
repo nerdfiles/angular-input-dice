@@ -1,5 +1,10 @@
 (() ->
   ngInputDice = angular.module 'ngInputDice', []
+  # diceService
+  # @description
+  # For implementation!
+  # @usage
+  #     diceService.dice('struct1', 'struct2')
   srvc = ngInputDice.service 'diceService', [
     '$http'
     ($http) ->
@@ -8,6 +13,9 @@
         console.log $http
       serviceInterface
   ]
+  # inputDice
+  # @description
+  # For implementation!
   # @usage
   #     <input-dice></input-dice>
   drtv = ngInputDice.directive 'inputDice', [
