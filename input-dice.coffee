@@ -22,6 +22,7 @@
     () ->
       linker = ($scope, $element, $attrs) ->
         console.log $scope
+        console.log $scope.control.newControl
         console.log $element
         console.log $attrs
       directiveInterface =

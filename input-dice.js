@@ -7,7 +7,9 @@
       '$http', function($http) {
         var serviceInterface;
         serviceInterface = this;
-        console.log(serviceInterface);
+        serviceInterface.dice = function() {
+          return console.log($http);
+        };
         return serviceInterface;
       }
     ]);
@@ -16,13 +18,17 @@
         var directiveInterface, linker;
         linker = function($scope, $element, $attrs) {
           console.log($scope);
+          console.log($scope.control.newControl);
           console.log($element);
           return console.log($attrs);
         };
         return directiveInterface = {
           controller: 'testController',
           restrict: 'E',
-          scope: false,
+          scope: {
+            'control': '=objectControl',
+            'admin': '=adminControl'
+          },
           link: linker
         };
       }
